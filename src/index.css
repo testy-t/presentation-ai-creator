@@ -103,7 +103,8 @@
 
 .presentations-container {
   position: relative;
-  height: 500px;
+  height: 100vh;
+  min-height: 600px;
   overflow: hidden;
 }
 
@@ -114,16 +115,16 @@
 }
 
 .presentations-row-1 {
-  top: 300px;
-  z-index: 30; /* Нижний ряд теперь имеет самый высокий z-index */
+  bottom: 10%;
+  z-index: 30; /* Нижний ряд с самым высоким z-index */
 }
 
 .presentations-row-2 {
-  top: 150px;
-  z-index: 20; /* Средний ряд остается со средним z-index */
+  bottom: 40%;
+  z-index: 20; /* Средний ряд */
 }
 
 .presentations-row-3 {
-  top: 0;
-  z-index: 10; /* Верхний ряд теперь имеет самый низкий z-index */
+  bottom: 70%;
+  z-index: 10; /* Верхний ряд с самым низким z-index */
 }
