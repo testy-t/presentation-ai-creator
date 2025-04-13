@@ -6,7 +6,7 @@ interface Presentation {
 }
 
 const Hero = () => {
-  // Первый ряд презентаций (будет снизу, но поверх второго)
+  // Первый ряд презентаций (нижний ряд, но поверх второго)
   const presentationsRow1: Presentation[] = [
     { title: "Принципы дизайна", image: "https://sokratic.ru/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F12.06abbbc9.png&w=640&q=75" },
     { title: "Концепции развития", image: "https://sokratic.ru/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F11.0f5cccb3.png&w=640&q=75" },
@@ -16,7 +16,7 @@ const Hero = () => {
     { title: "Анализ рынка", image: "https://sokratic.ru/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F7.03039df5.png&w=640&q=75" },
   ];
 
-  // Второй ряд презентаций (будет посередине)
+  // Второй ряд презентаций (средний ряд)
   const presentationsRow2: Presentation[] = [
     { title: "Бизнес-планирование", image: "https://sokratic.ru/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F1.da6903cc.png&w=640&q=75" },
     { title: "Мифы и легенды", image: "https://sokratic.ru/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F2.cf04a718.png&w=640&q=75" },
@@ -26,7 +26,7 @@ const Hero = () => {
     { title: "Стратегии компании", image: "https://sokratic.ru/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F13.f4c64096.png&w=640&q=75" },
   ];
 
-  // Третий ряд презентаций (будет сверху, но под всеми)
+  // Третий ряд презентаций (верхний ряд, но под всеми)
   const presentationsRow3: Presentation[] = [
     { title: "Нейронные сети", image: "https://sokratic.ru/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F14.c51d1164.png&w=640&q=75" },
     { title: "Социальная адаптация", image: "https://sokratic.ru/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F15.b839be77.png&w=640&q=75" },
@@ -44,13 +44,13 @@ const Hero = () => {
   const row3Items = duplicateItems(presentationsRow3);
 
   return (
-    <section className="relative overflow-hidden" style={{ height: '100vh', minHeight: '700px' }}>
+    <section className="hero-section relative overflow-hidden">
       {/* Анимированные презентации как фон */}
-      <div className="presentations-container absolute inset-0 w-full">
-        {/* Первый ряд - снизу, но поверх второго, движется вправо */}
-        <div className="presentations-row presentations-row-1 slide-right">
-          {row1Items.map((item, index) => (
-            <div key={`row1-${index}`} className="flex-none w-64 md:w-72 mx-2 rounded-lg overflow-hidden shadow-xl bg-card">
+      <div className="presentations-container">
+        {/* Третий ряд - сверху, но под всеми, движется вправо */}
+        <div className="presentations-row presentations-row-3 slide-right">
+          {row3Items.map((item, index) => (
+            <div key={`row3-${index}`} className="flex-none w-64 md:w-80 mx-2 rounded-lg overflow-hidden shadow-xl">
               <div className="aspect-[4/3] relative">
                 <img 
                   src={item.image} 
@@ -68,7 +68,7 @@ const Hero = () => {
         {/* Второй ряд - посередине, движется влево */}
         <div className="presentations-row presentations-row-2 slide-left">
           {row2Items.map((item, index) => (
-            <div key={`row2-${index}`} className="flex-none w-64 md:w-72 mx-2 rounded-lg overflow-hidden shadow-xl bg-card">
+            <div key={`row2-${index}`} className="flex-none w-64 md:w-80 mx-2 rounded-lg overflow-hidden shadow-xl">
               <div className="aspect-[4/3] relative">
                 <img 
                   src={item.image} 
@@ -83,10 +83,10 @@ const Hero = () => {
           ))}
         </div>
 
-        {/* Третий ряд - сверху, но под всеми, движется вправо */}
-        <div className="presentations-row presentations-row-3 slide-right">
-          {row3Items.map((item, index) => (
-            <div key={`row3-${index}`} className="flex-none w-64 md:w-72 mx-2 rounded-lg overflow-hidden shadow-xl bg-card">
+        {/* Первый ряд - снизу, но поверх всех, движется вправо */}
+        <div className="presentations-row presentations-row-1 slide-right">
+          {row1Items.map((item, index) => (
+            <div key={`row1-${index}`} className="flex-none w-64 md:w-80 mx-2 rounded-lg overflow-hidden shadow-xl">
               <div className="aspect-[4/3] relative">
                 <img 
                   src={item.image} 
