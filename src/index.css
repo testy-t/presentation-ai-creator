@@ -114,17 +114,20 @@
   display: flex;
 }
 
+/* Первый ряд (нижний) имеет самый высокий z-index, но находится внизу */
 .presentations-row-1 {
   bottom: 10%;
-  z-index: 30; /* Нижний ряд с самым высоким z-index */
+  z-index: 30;
 }
 
+/* Второй ряд (средний) имеет средний z-index */
 .presentations-row-2 {
   bottom: 40%;
-  z-index: 20; /* Средний ряд */
+  z-index: 20;
 }
 
+/* Третий ряд (верхний) имеет самый низкий z-index, хотя находится сверху */
 .presentations-row-3 {
   bottom: 70%;
-  z-index: 10; /* Верхний ряд с самым низким z-index */
+  z-index: 10;
 }
