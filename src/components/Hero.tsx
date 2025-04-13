@@ -119,11 +119,11 @@ const Hero = () => {
       </div>
 
       {/* Основной контент Hero поверх анимации */}
-      <div className="relative z-40 h-full flex items-start pt-16 md:pt-24">
+      <div className="relative z-40 h-full flex items-center">
         <div className="container px-4 md:px-6">
-          <div className="backdrop-blur-sm bg-white/40 p-8 md:p-12 rounded-xl max-w-3xl mx-auto">
+          <div className="backdrop-blur-xl bg-white/60 p-8 md:p-12 rounded-xl max-w-3xl mx-auto shadow-lg">
             <div className="flex flex-col items-center text-center space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-gray-900">
                 Сократик
               </h1>
               <p className="text-xl md:text-2xl text-gray-800 max-w-[800px]">
