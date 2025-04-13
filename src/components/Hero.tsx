@@ -123,9 +123,17 @@ const Hero = () => {
         <div className="container px-4 md:px-6">
           <div className="backdrop-blur-xl bg-white/60 p-8 md:p-12 rounded-xl max-w-3xl mx-auto shadow-lg">
             <div className="flex flex-col items-center text-center space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-gray-900">
-                Сократик
-              </h1>
+              <div className="flex flex-col items-center">
+                <img 
+                  src="https://sokratic.ru/_next/image?url=%2Flogo.png&w=384&q=75" 
+                  alt="Логотип Сократик" 
+                  className="h-16 md:h-20 mb-3"
+                />
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-gray-900">
+                  Сократик
+                </h1>
+              </div>
+              
               <p className="text-xl md:text-2xl text-gray-800 max-w-[800px]">
                 Создавайте профессиональные презентации с помощью искусственного интеллекта
               </p>

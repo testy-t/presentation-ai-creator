@@ -9,17 +9,18 @@ const Header = () => {
 
   const navItems = [
     { title: "Главная", href: "/" },
-    { title: "Примеры", href: "#examples-section" },
+    { title: "Примеры", href: "#benefits-section" },
     { title: "Преимущества", href: "#benefits-section" },
     { title: "Отзывы", href: "#testimonials-section" },
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold">Сократик</span>
+          <Link to="/" className="flex items-center space-x-3">
+            <img src="https://sokratic.ru/_next/image?url=%2Flogo.png&w=384&q=75" alt="Логотип Сократик" className="h-8" />
+            <span className="text-xl font-bold">Сократик</span>
           </Link>
         </div>
 
@@ -65,7 +66,8 @@ const Header = () => {
               <div className="px-6">
                 <div className="flex items-center justify-between">
                   <Link to="/" className="flex items-center space-x-2">
-                    <span className="text-2xl font-bold">Сократик</span>
+                    <img src="https://sokratic.ru/_next/image?url=%2Flogo.png&w=384&q=75" alt="Логотип Сократик" className="h-7" />
+                    <span className="text-xl font-bold">Сократик</span>
                   </Link>
                   <Button
                     variant="ghost"
