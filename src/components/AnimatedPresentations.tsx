@@ -4,7 +4,7 @@ interface Presentation {
 }
 
 const AnimatedPresentations = () => {
-  // Первый ряд презентаций (будет снизу)
+  // Первый ряд презентаций (будет снизу, но поверх второго)
   const presentationsRow1: Presentation[] = [
     { title: "Принципы дизайна", image: "https://cdn.poehali.dev/files/967eb143-04ee-4da1-932e-b79cf297ab48.png" },
     { title: "Концепции Галицкого парка", image: "/placeholder.svg" },
@@ -13,7 +13,7 @@ const AnimatedPresentations = () => {
     { title: "Методы сбора данных", image: "/placeholder.svg" },
   ];
 
-  // Второй ряд презентаций (будет посередине)
+  // Второй ряд презентаций (будет посередине и поверх третьего)
   const presentationsRow2: Presentation[] = [
     { title: "Польза зарядки для здоровья", image: "/placeholder.svg" },
     { title: "Мифы Древней Греции", image: "/placeholder.svg" },
@@ -22,7 +22,7 @@ const AnimatedPresentations = () => {
     { title: "История Берлина", image: "/placeholder.svg" },
   ];
 
-  // Третий ряд презентаций (будет сверху)
+  // Третий ряд презентаций (будет сверху, но под всеми)
   const presentationsRow3: Presentation[] = [
     { title: "Нейроструктурный анализ", image: "/placeholder.svg" },
     { title: "Социализация", image: "/placeholder.svg" },
@@ -52,7 +52,7 @@ const AnimatedPresentations = () => {
       </div>
 
       <div className="presentations-container">
-        {/* Первый ряд - снизу, движется вправо */}
+        {/* Первый ряд - снизу, но поверх второго, движется вправо */}
         <div className="presentations-row presentations-row-1 slide-right">
           {row1Items.map((item, index) => (
             <div key={`row1-${index}`} className="flex-none w-64 md:w-72 mx-2 rounded-lg overflow-hidden shadow-lg bg-card">
@@ -88,7 +88,7 @@ const AnimatedPresentations = () => {
           ))}
         </div>
 
-        {/* Третий ряд - сверху, движется вправо */}
+        {/* Третий ряд - сверху, но под всеми, движется вправо */}
         <div className="presentations-row presentations-row-3 slide-right">
           {row3Items.map((item, index) => (
             <div key={`row3-${index}`} className="flex-none w-64 md:w-72 mx-2 rounded-lg overflow-hidden shadow-lg bg-card">
