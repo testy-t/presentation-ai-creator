@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import AnimatedPresentations from "@/components/AnimatedPresentations";
 import Benefits from "@/components/Benefits";
@@ -9,11 +10,12 @@ import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <Header />
       <Hero />
       <AnimatedPresentations />
-      <Benefits />
-      <ExamplePresentations />
-      <Testimonials />
+      <Benefits id="benefits-section" />
+      <ExamplePresentations id="examples-section" />
+      <Testimonials id="testimonials-section" />
       <RequestForm />
       <Footer />
     </div>

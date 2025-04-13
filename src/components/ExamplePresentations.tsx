@@ -1,7 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-const ExamplePresentations = () => {
+interface ExamplePresentationsProps {
+  id?: string;
+}
+
+const ExamplePresentations = ({ id }: ExamplePresentationsProps) => {
   const examples = [
     {
       title: "Бизнес-стратегия 2023",
@@ -24,7 +28,7 @@ const ExamplePresentations = () => {
   ];
 
   return (
-    <section id="examples-section" className="py-16 md:py-24 bg-muted">
+    <section id={id} className="py-16 md:py-24 bg-muted">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">

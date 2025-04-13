@@ -1,7 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const Testimonials = () => {
+interface TestimonialsProps {
+  id?: string;
+}
+
+const Testimonials = ({ id }: TestimonialsProps) => {
   const testimonials = [
     {
       name: "Михаил Проценко",
@@ -27,7 +31,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section id={id} className="py-16 md:py-24 bg-white">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">

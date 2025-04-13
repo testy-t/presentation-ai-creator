@@ -1,6 +1,10 @@
 import { Clock, Zap, Sparkles } from "lucide-react";
 
-const Benefits = () => {
+interface BenefitsProps {
+  id?: string;
+}
+
+const Benefits = ({ id }: BenefitsProps) => {
   const benefits = [
     {
       icon: <Clock className="h-10 w-10 text-primary" />,
@@ -20,7 +24,7 @@ const Benefits = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section id={id} className="py-16 md:py-24 bg-white">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-10 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
