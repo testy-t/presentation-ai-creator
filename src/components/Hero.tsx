@@ -1,4 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { ArrowRight } from "lucide-react";
 
 interface Presentation {
   title: string;
@@ -6,6 +9,20 @@ interface Presentation {
 }
 
 const Hero = () => {
+  const [prompt, setPrompt] = useState("");
+  
+  const handleCreatePresentation = () => {
+    if (prompt.trim()) {
+      // При реальной реализации здесь будет обработка промпта
+      // Сейчас просто прокручиваем к форме
+      document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth' });
+      
+      // Можно было бы также автоматически заполнить тему презентации в форме
+      // Для демонстрации просто записываем в консоль
+      console.log("Создание презентации с промптом:", prompt);
+    }
+  };
+
   // Первый ряд презентаций (нижний ряд, но поверх второго)
   const presentationsRow1: Presentation[] = [
     { title: "Принципы дизайна", image: "https://sokratic.ru/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F12.06abbbc9.png&w=640&q=75" },
@@ -105,20 +122,49 @@ const Hero = () => {
       {/* Основной контент Hero поверх анимации */}
       <div className="relative z-40 h-full flex items-center">
         <div className="container px-4 md:px-6">
-          <div className="backdrop-blur-sm bg-white/30 p-8 md:p-12 rounded-xl max-w-2xl mx-auto">
-            <div className="flex flex-col items-center text-center space-y-4">
+          <div className="backdrop-blur-sm bg-white/40 p-8 md:p-12 rounded-xl max-w-3xl mx-auto">
+            <div className="flex flex-col items-center text-center space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
                 Сократик
               </h1>
               <p className="text-xl md:text-2xl text-gray-800 max-w-[800px]">
                 Создавайте профессиональные презентации с помощью искусственного интеллекта
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mt-6">
-                <Button size="lg" className="font-medium" onClick={() => document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth' })}>
-                  Создать презентацию
-                </Button>
-                <Button size="lg" variant="outline" className="font-medium" onClick={() => document.getElementById('benefits-section')?.scrollIntoView({ behavior: 'smooth' })}>
+              
+              {/* Поле для ввода промпта */}
+              <div className="w-full max-w-2xl mt-8">
+                <div className="relative">
+                  <Input
+                    className="pr-12 py-6 text-lg shadow-md focus-visible:ring-primary"
+                    placeholder="Опишите тему презентации..."
+                    value={prompt}
+                    onChange={(e) => setPrompt(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        handleCreatePresentation();
+                      }
+                    }}
+                  />
+                  <Button 
+                    className="absolute right-1 top-1 h-10 w-10 rounded-full p-0"
+                    onClick={handleCreatePresentation}
+                    disabled={!prompt.trim()}
+                  >
+                    <ArrowRight className="h-5 w-5" />
+                    <span className="sr-only">Создать презентацию</span>
+                  </Button>
+                </div>
+                <p className="text-sm text-gray-600 mt-2">
+                  Например: "Стратегия развития компании на 2023 год" или "История искусства Ренессанса"
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 mt-4">
+                <Button variant="outline" className="font-medium" onClick={() => document.getElementById('benefits-section')?.scrollIntoView({ behavior: 'smooth' })}>
                   Узнать больше
+                </Button>
+                <Button variant="outline" className="font-medium" onClick={() => document.getElementById('examples-section')?.scrollIntoView({ behavior: 'smooth' })}>
+                  Примеры работ
                 </Button>
               </div>
             </div>
