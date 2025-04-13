@@ -114,8 +114,8 @@
 }
 
 .presentations-row-1 {
-  top: 0;
-  z-index: 30;
+  top: 300px;
+  z-index: 10;
 }
 
 .presentations-row-2 {
@@ -124,6 +124,6 @@
 }
 
 .presentations-row-3 {
-  top: 300px;
-  z-index: 10;
+  top: 0;
+  z-index: 30;
 }

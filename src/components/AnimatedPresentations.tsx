@@ -4,7 +4,7 @@ interface Presentation {
 }
 
 const AnimatedPresentations = () => {
-  // Первый ряд презентаций
+  // Первый ряд презентаций (будет снизу)
   const presentationsRow1: Presentation[] = [
     { title: "Принципы дизайна", image: "https://cdn.poehali.dev/files/967eb143-04ee-4da1-932e-b79cf297ab48.png" },
     { title: "Концепции Галицкого парка", image: "/placeholder.svg" },
@@ -13,7 +13,7 @@ const AnimatedPresentations = () => {
     { title: "Методы сбора данных", image: "/placeholder.svg" },
   ];
 
-  // Второй ряд презентаций
+  // Второй ряд презентаций (будет посередине)
   const presentationsRow2: Presentation[] = [
     { title: "Польза зарядки для здоровья", image: "/placeholder.svg" },
     { title: "Мифы Древней Греции", image: "/placeholder.svg" },
@@ -22,7 +22,7 @@ const AnimatedPresentations = () => {
     { title: "История Берлина", image: "/placeholder.svg" },
   ];
 
-  // Третий ряд презентаций
+  // Третий ряд презентаций (будет сверху)
   const presentationsRow3: Presentation[] = [
     { title: "Нейроструктурный анализ", image: "/placeholder.svg" },
     { title: "Социализация", image: "/placeholder.svg" },
@@ -52,7 +52,7 @@ const AnimatedPresentations = () => {
       </div>
 
       <div className="presentations-container">
-        {/* Первый ряд - движется вправо */}
+        {/* Первый ряд - снизу, движется вправо */}
         <div className="presentations-row presentations-row-1 slide-right">
           {row1Items.map((item, index) => (
             <div key={`row1-${index}`} className="flex-none w-64 md:w-72 mx-2 rounded-lg overflow-hidden shadow-lg bg-card">
@@ -70,7 +70,7 @@ const AnimatedPresentations = () => {
           ))}
         </div>
 
-        {/* Второй ряд - движется влево */}
+        {/* Второй ряд - посередине, движется влево */}
         <div className="presentations-row presentations-row-2 slide-left">
           {row2Items.map((item, index) => (
             <div key={`row2-${index}`} className="flex-none w-64 md:w-72 mx-2 rounded-lg overflow-hidden shadow-lg bg-card">
@@ -88,7 +88,7 @@ const AnimatedPresentations = () => {
           ))}
         </div>
 
-        {/* Третий ряд - движется вправо */}
+        {/* Третий ряд - сверху, движется вправо */}
         <div className="presentations-row presentations-row-3 slide-right">
           {row3Items.map((item, index) => (
             <div key={`row3-${index}`} className="flex-none w-64 md:w-72 mx-2 rounded-lg overflow-hidden shadow-lg bg-card">
