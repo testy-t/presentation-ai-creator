@@ -18,7 +18,6 @@ const Hero = () => {
       document.getElementById('form-section')?.scrollIntoView({ behavior: 'smooth' });
       
       // Можно было бы также автоматически заполнить тему презентации в форме
-      // Для демонстрации просто записываем в консоль
       console.log("Создание презентации с промптом:", prompt);
     }
   };
@@ -120,7 +119,7 @@ const Hero = () => {
       </div>
 
       {/* Основной контент Hero поверх анимации */}
-      <div className="relative z-40 h-full flex items-center">
+      <div className="relative z-40 h-full flex items-start pt-16 md:pt-24">
         <div className="container px-4 md:px-6">
           <div className="backdrop-blur-sm bg-white/40 p-8 md:p-12 rounded-xl max-w-3xl mx-auto">
             <div className="flex flex-col items-center text-center space-y-6">
@@ -132,7 +131,7 @@ const Hero = () => {
               </p>
               
               {/* Поле для ввода промпта */}
-              <div className="w-full max-w-2xl mt-8">
+              <div className="w-full max-w-2xl mt-4">
                 <div className="relative">
                   <Input
                     className="pr-12 py-6 text-lg shadow-md focus-visible:ring-primary"
@@ -159,12 +158,12 @@ const Hero = () => {
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 mt-4">
+              <div className="flex flex-col sm:flex-row gap-4 mt-2">
                 <Button variant="outline" className="font-medium" onClick={() => document.getElementById('benefits-section')?.scrollIntoView({ behavior: 'smooth' })}>
                   Узнать больше
                 </Button>
-                <Button variant="outline" className="font-medium" onClick={() => document.getElementById('examples-section')?.scrollIntoView({ behavior: 'smooth' })}>
-                  Примеры работ
+                <Button variant="outline" className="font-medium" onClick={() => document.getElementById('testimonials-section')?.scrollIntoView({ behavior: 'smooth' })}>
+                  Отзывы клиентов
                 </Button>
               </div>
             </div>
